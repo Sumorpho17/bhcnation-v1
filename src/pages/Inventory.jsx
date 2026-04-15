@@ -103,7 +103,7 @@ export default function Inventory() {
                                 <td className="px-6 py-4 font-bold text-slate-900 dark:text-slate-100">{item.name}</td>
                                 <td className="px-6 py-4">{item.category}</td>
                                 <td className="px-6 py-4">
-                                    <span className={\`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider \${conditionColors[item.condition] || 'bg-slate-100 text-slate-600'}\`}>
+                                    <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${conditionColors[item.condition] || 'bg-slate-100 text-slate-600'}`}>
                                         {item.condition}
                                     </span>
                                 </td>
