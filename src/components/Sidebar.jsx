@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 
 const navItems = [
-  { icon: 'dashboard', label: 'Dashboard', path: '/' },
-  { icon: 'group', label: 'Members', path: '/directory' },
-  { icon: 'account_balance_wallet', label: 'Finance', path: '/giving' },
-  { icon: 'event', label: 'Programs', path: '/events' },
-  { icon: 'volunteer_activism', label: 'Volunteers', path: '/volunteers' },
-  { icon: 'domain', label: 'Departments', path: '/departments' },
-  { icon: 'inventory_2', label: 'Inventory', path: '/inventory' },
+  { icon: 'dashboard', label: 'Dashboard', path: '/dashboard' },
+  { icon: 'group', label: 'Members', path: '/dashboard/directory' },
+  { icon: 'account_balance_wallet', label: 'Finance', path: '/dashboard/giving' },
+  { icon: 'event', label: 'Programs', path: '/dashboard/events' },
+  { icon: 'volunteer_activism', label: 'Volunteers', path: '/dashboard/volunteers' },
+  { icon: 'domain', label: 'Departments', path: '/dashboard/departments' },
+  { icon: 'inventory_2', label: 'Inventory', path: '/dashboard/inventory' },
 ];
 
 export default function Sidebar() {

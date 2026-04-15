@@ -83,7 +83,7 @@ export default function Events() {
                     <div key={program.id} className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
                         <div className="p-5 flex-1">
                             <div className="flex justify-between items-start mb-3">
-                                <span className={\`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full \${program.status === 'Upcoming' ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}\`}>
+                                <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full ${program.status === 'Upcoming' ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'}`}>
                                     {program.status}
                                 </span>
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">

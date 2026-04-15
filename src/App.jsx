@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Topbar from './components/Topbar';
+import DashboardLayout from './layouts/DashboardLayout';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import Directory from './pages/Directory'; // We will rename this to Members later or keep it and change title
 import Events from './pages/Events'; // Programs
@@ -19,24 +19,22 @@ function App() {
     <Router>
       <AppDataProvider>
         <ToastProvider>
-          <div className="flex h-screen bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
-            <Sidebar />
-            <div className="flex-1 flex flex-col md:ml-64 relative w-full h-full overflow-y-auto">
-              <Topbar />
-              <div className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/directory" element={<Directory />} />
-                  <Route path="/events" element={<Events />} />
-                  <Route path="/giving" element={<Giving />} />
-                  <Route path="/volunteers" element={<Volunteers />} />
-                  <Route path="/departments" element={<Departments />} />
-                  <Route path="/inventory" element={<Inventory />} />
-                  <Route path="/settings" element={<Settings />} />
-                </Routes>
-              </div>
-            </div>
-          </div>
+          <Routes>
+            {/* Public Entry Point */}
+            <Route path="/" element={<LandingPage />} />
+
+            {/* Dashboard Protected Application */}
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="directory" element={<Directory />} />
+              <Route path="events" element={<Events />} />
+              <Route path="giving" element={<Giving />} />
+              <Route path="volunteers" element={<Volunteers />} />
+              <Route path="departments" element={<Departments />} />
+              <Route path="inventory" element={<Inventory />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
+          </Routes>
         </ToastProvider>
       </AppDataProvider>
     </Router>
